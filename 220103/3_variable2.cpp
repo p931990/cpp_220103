@@ -28,6 +28,15 @@ int main()
 // > 일관된 방법을 통해 변수를 초기화할 수 있다.
 int main()
 {
+  // int n3 = 3.14; // warning
+  // cout << n3 << endl;
+
+  int n4{3.14};
+  // 데이터 손실이 발생하는 잘못된 초기화에 대해서 컴파일 오류가 발생합니다.
+
+  // char c1 = 300;
+  char c2{300};
+
   // =(등호): Copy initialization
   int n1 = {0};
   int x[3] = {1, 2, 3};
@@ -35,6 +44,6 @@ int main()
 
   // Direct initialization
   int n2{0};
-  int x[3]{1, 2, 3};
+  int x2[3]{1, 2, 3};
   Point p2{10, 20};
 }
