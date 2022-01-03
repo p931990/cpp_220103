@@ -36,6 +36,6 @@ int main()
 
 int main()
 {
-  printf("Hello, C\n");
+  std::printf("Hello, C\n");
   std::cout << "Hello, C++" << std::endl;
 }
