@@ -63,6 +63,8 @@ void goo(POINTER p)
 }
 
 // C++11에서는 typedef 말고, using을 통해서 타입의 별칭을 만들 수 있습니다.
+// 1) 가독성이 좋다.
+// 2) typedef는 '템플릿'의 문법에서는 사용할 수 없습니다.
 using POINTER2 = int (*)[3];
 void xoo(POINTER2 p)
 {
