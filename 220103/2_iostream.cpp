@@ -25,6 +25,6 @@ int main()
   cin >> n;
 
   // cout << "out: " << n << std::endl;
-  cout << "out: ";
+  cout << "out: " << n;
   cout << std::endl;
 }
