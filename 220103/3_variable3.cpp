@@ -22,19 +22,56 @@ void foo(int *x, int n)
 // int *p[5];   > 포인터 배열(40바이트) - [int*][int*][int*][int*][int*]
 // int (*p)[5]; > 배열 포인터(8바이트)
 
-void goo(int (*p)[5])
+void goo(int (*p)[5], int n)
+{
+}
+
+/*
+int main()
+{
+  int z[3][5];
+  // z의 타입: int[3][5]
+  goo(z, 3);
+
+  int y[3] = {1, 2, 3};
+  foo(y, 3);
+
+  // g++ 3_variable3.cpp -std=c++11`
+  auto a = y[0];
+  auto p = &y[0];
+  // auto를 사용하면, 우항의 타입과 동일한 타입으로 컴파일 타임에 결정됩니다.
+
+  // auto xx;
+  // 반드시 우항이 필요합니다.
+
+  int x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  foo(x, 10);
+}
+*/
+
+// typedef
+// : 기존 타입의 별칭을 만들어서 사용할 수 있습니다.
+// > 복잡한 타입을 간결하게 사용할 수 있습니다.
+// x: [int[3]][int[3]]
+void hoo(int (*p)[3])
+{
+}
+
+typedef int (*POINTER)[3];
+void goo(POINTER p)
+{
+}
+
+// C++11에서는 typedef 말고, using을 통해서 타입의 별칭을 만들 수 있습니다.
+using POINTER2 = int (*)[3];
+void xoo(POINTER2 p)
 {
 }
 
 int main()
 {
-  int z[3][5];
-  // z의 타입: int[3][5]
-  goo(z);
-
-  int y[3] = {1, 2, 3};
-  foo(y, 3);
-
-  int x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  foo(x, 10);
+  int x[2][3];
+  hoo(x);
+  goo(x);
+  xoo(x);
 }
