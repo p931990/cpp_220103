@@ -7,6 +7,7 @@ using namespace std;
 // 1. C언어에서는 문자열을 다룰 때,
 //    char 배열 또는 const char* 를 사용합니다.
 
+/*
 int main()
 {
   char s1[] = "hello";
@@ -21,4 +22,23 @@ int main()
   {
     printf("동일한 문자열 입니다...\n");
   }
+
+  // strcpy strcat
+}
+*/
+
+#include <string>
+
+int main()
+{
+  std::string s1 = "hello";
+  std::string s2 = "hello";
+
+  if (s1 == s2)
+  {
+    printf("동일한 문자열 입니다...\n");
+  }
+
+  std::string s3 = s2; // strcpy
+  cout << s1 << ", " << s2 << ", " << s3 << endl;
 }
