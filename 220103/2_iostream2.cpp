@@ -1,7 +1,6 @@
 // 2_iostream2.cpp
 #include <iostream>
-#include <iomanip> // setw
-
+#include <iomanip> // setw, setfill
 using namespace std;
 
 int main()
