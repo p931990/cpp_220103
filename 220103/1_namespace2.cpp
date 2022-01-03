@@ -24,10 +24,18 @@ int main()
 */
 
 // 3. using 지시어(directive)
-using namespace std;
+#include <algorithm>
+// using namespace std;
 
+// using std::cout;
+// using std::endl;
+
+// 1_namespace2.cpp:30:5: note: candidate found by name lookup is 'count'
+int count;
 int main()
 {
-  cout << "Hello, cpp" << endl
-       << "Hello, cpp" << endl;
+  count = 10;
+  // std::count()
+  std::cout << "Hello, cpp" << std::endl
+            << "Hello, cpp" << std::endl;
 }
