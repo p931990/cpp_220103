@@ -16,3 +16,8 @@ int main()
   cout << s1.pop() << endl;
   cout << s2.pop() << endl;
 }
+
+// g++ -c Stack.cpp -std=c++11
+// g++ -c main.cpp -std=c++11
+// g++ main.o Stack.o
+// ./a.out
