@@ -1,34 +1,28 @@
 #include <iostream>
 using namespace std;
 
-class Stack
+#include "Stack.h"
+
+Stack::Stack(int sz = 10)
 {
-private:
-  int *buff;
-  int idx;
+  idx = 0;
+  buff = new int[sz];
+}
 
-public:
-  Stack(int sz = 10)
-  {
-    idx = 0;
-    buff = new int[sz];
-  }
+Stack::~Stack()
+{
+  delete[] buff;
+}
 
-  ~Stack()
-  {
-    delete[] buff;
-  }
+void Stack::push(int v)
+{
+  buff[idx++] = v;
+}
 
-  void push(int v)
-  {
-    buff[idx++] = v;
-  }
-
-  int pop()
-  {
-    return buff[--idx];
-  }
-};
+int Stack::pop()
+{
+  return buff[--idx];
+}
 
 Stack s1;
 int main()
