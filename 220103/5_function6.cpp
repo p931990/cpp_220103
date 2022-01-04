@@ -31,6 +31,7 @@ FP foo()
   return &add;
 }
 
+/*
 int main()
 {
   int a;
@@ -43,4 +44,17 @@ int main()
 
   p2 = &sub;
   cout << (*p2)(10, 20) << endl;
+}
+*/
+
+int main()
+{
+  int x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+  for (int i = 0; i < 10; ++i)
+    cout << x[i] << endl;
+
+  // C++11 - ranged for
+  for (int n : x)
+    cout << n << endl;
 }
