@@ -75,7 +75,12 @@ int main()
 //      기본적으로 public이 됩니다.
 //     => class
 //      기본 접근 지정이 private 입니다.
+// 5. 생성자 함수를 도입합니다.
+//   생성자(Constructor)
+//   - 함수 이름이 클래스 이름과 동일하고, 반환 타입을 표기하지 않습니다.
+//   > 객체가 생성되면 자동으로 호출됩니다.
 
+/*
 class Stack
 {
 private:
@@ -84,6 +89,12 @@ private:
   int idx;
 
 public:
+  Stack()
+  {
+    cout << "Stack()" << endl;
+    idx = 0;
+  }
+
   // 멤버 함수
   // - 멤버 데이터에 접근하는 함수
   // > 명시적인 함수 인자로 Stack*을 받을 필요가 없습니다.
@@ -110,9 +121,9 @@ int main()
 
   // 초기화가 필요합니다.
   // s1.idx = 0;
-  s1.init();
+  // s1.init();
   // s2.idx = 0;
-  s2.init();
+  // s2.init();
 
   s1.push(10);
   s2.push(20);
@@ -121,6 +132,61 @@ int main()
 
   // push(&s1, 10);
   // push(&s2, 20);
+
+  cout << s1.pop() << endl;
+  cout << s2.pop() << endl;
+}
+*/
+
+// 6. 사용자가 스택의 크기를 결정할 수 있도록 합니다.
+// > 생성자는 인자를 가져도 되고, 인자를 가지지 않아도 됩니다.
+//   생성자는 오버로딩이 가능합니다.
+class Stack
+{
+private:
+  // 멤버 변수(데이터)
+  int *buff;
+  int idx;
+
+public:
+  // Stack s1;
+  /*
+  Stack()
+  {
+    cout << "Stack()" << endl;
+    idx = 0;
+  }
+  */
+
+  // Stack s2{10}
+  // Stack s2(10)
+  // Stack s1;
+  Stack(int sz = 10)
+  {
+    idx = 0;
+    buff = new int[sz];
+    // 사용자가 전달한 크기 만큼 버퍼를 할당합니다.
+  }
+
+  void push(int v)
+  {
+    buff[idx++] = v;
+  }
+
+  int pop()
+  {
+    return buff[--idx];
+  }
+};
+
+Stack s1;
+int main()
+{
+  Stack s2(100);
+  Stack s3{100};
+
+  s1.push(10);
+  s2.push(20);
 
   cout << s1.pop() << endl;
   cout << s2.pop() << endl;
