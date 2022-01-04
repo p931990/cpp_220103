@@ -1,4 +1,3 @@
-// Trailing return type
 #include <iostream>
 using namespace std;
 
@@ -12,9 +11,32 @@ using namespace std;
 int sub(int a, int b) { return a - b; } // int(int, int)
 int add(int a, int b) { return a + b; } // int(int, int)
 
+// C++11 - Trailing return type
+// => 함수를 만드는 새로운 문법을 제공합니다.
+auto sub1(int a, int b) -> int
+{
+  return a - b;
+}
+
+auto foo2() -> int (*)(int a, int b)
+{
+  return &add;
+}
+
+using FP = int (*)(int a, int b);
+
+// int (*foo())(int a, int b)
+FP foo()
+{
+  return &add;
+}
+
 int main()
 {
   int a;
+
+  add(10, 20);
+
   int *p = &a;
   // add => int(int a, int b)
   int (*p2)(int a, int b) = &add;
