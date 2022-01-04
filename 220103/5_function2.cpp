@@ -13,28 +13,46 @@ using namespace std;
 // int foo() {}
 // void foo() {}
 
-void goo(int a) {}
-void goo(int a, int b = 100) {}
+// void goo(int a) {}
+// void goo(int a, int b = 100) {}
 // goo(10);
 // > 컴파일러는 어떤 함수를 호출할지 결정할 수 없습니다. - 컴파일 오류!
 
-int square(int x)
-{
-  return x * x;
-}
-
-double square(double x)
-{
-  return x * x;
-}
-
-char square(char c)
-{
-  return c * c;
-}
-
+/*
 int main()
 {
   // goo(10);
   // call to 'goo' is ambiguous
+}
+*/
+
+// int square(int x)
+// {
+//   printf("int\n");
+//   return x * x;
+// }
+
+long square(long l)
+{
+  printf("long\n");
+  return l * l;
+}
+
+// float square(float c)
+// {
+//   printf("float\n");
+//   return c * c;
+// }
+
+// 오버로딩 규칙
+// 1) 정확한 타입을 찾습니다.
+//   square(42) -> square(int)
+// - 상승
+//   square(int) -> square(long)
+// - 호환
+//   square(int) -> square(char)
+
+int main()
+{
+  square(42);
 }

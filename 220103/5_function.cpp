@@ -24,7 +24,7 @@ int main()
 // 선언부와 구현부에 모두 디폴트값을 표기하면, 컴파일 오류가 발생합니다.
 // void foo(int a, int b, int c = 10, int d = 30)
 // foo.cpp
-void foo(int a, int b, int c /* = 10 */, int d /* = 30 */)
+void foo(int a, int b, int c /* = 5 */, int d /* = 20 */)
 {
   cout << a << ", " << b << ", " << c << ", " << d << endl;
 }
