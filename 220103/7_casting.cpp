@@ -76,3 +76,5 @@ int main()
 }
 
 // 4) reinterpret_cast
+
+// http://git-scm.com/book/ko/v2
