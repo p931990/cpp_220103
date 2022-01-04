@@ -14,6 +14,7 @@ int gcd(int a, int b)
 
 // 2) C++11 - delete function
 //  => 함수를 삭제하는 문법
+//  => 컴파일 오류가 발생합니다.
 double gcd(double a, double b) = delete;
 
 int main()
