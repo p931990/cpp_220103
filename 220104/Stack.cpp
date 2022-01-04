@@ -3,7 +3,7 @@ using namespace std;
 
 #include "Stack.h"
 
-Stack::Stack(int sz = 10)
+Stack::Stack(int sz /* = 10 */)
 {
   idx = 0;
   buff = new int[sz];
